@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row flex-wrap">
+    <div class="col-md-4 col-sm-12">
+      <h3>Plan du site</h3>
+      <div class="list-group" style="cursor:pointer">
+        <div class="list-group-item list-group-item-action">A propos de l'hôtel paradis</div>
+        <div class="list-group-item list-group-item-action">Nos chambres et suites</div>
+        <div class="list-group-item list-group-item-action">Notre restaurant</div>
+        <div class="list-group-item list-group-item-action">Notre espace bien-être</div>
+        <div class="list-group-item list-group-item-action">Contactez-nous</div>
+        <div class="list-group-item list-group-item-action">Mentions légales</div>
+      </div>
+    </div>
+    <div class="col-md-5 col-sm-12">
+      <!-- Adresse postale -->
+      <div id="adresse">
+        <div class="row">
+          <h4 class="col-12">Adresse postale</h4>
+          <p class="ml-3"> 8 rue Pierre curie, Asnières sur Seine 92600</p>
+        </div>
+
+        <img class="img-fluid" src="https://maps.googleapis.com/maps/api/staticmap?center=8+rue+pierre+curie+asnieres+sur+seine&size=540x400&markers=color:0xe3bd69|label:H|8+rue+pierre+curie+asnieres+sur+seine&key=AIzaSyBPMtzJtL1p8lcj_SekGUZuV5rEN9IO8lI
+        "
+          alt="">
+      </div>
+      <!-- Fin adresse postale -->
+    </div>
+    <div class="col-md col-sm-12">
+      <form #f='ngForm' (ngSubmit)='onSubmit(f)'>
+        <h3>Newsletter</h3>
+        <p>Nullam mi quam, pretium eu turpis sit amet, scelerisque interdum urna</p>
+        <div class="form-group">
+          <input type="text" name="nom" ngModel placeholder="Nom" class="form-control">
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" ngModel placeholder="Adresse Email" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-warning float-right">S'abonner</button>
+      </form>
+    </div>
+  </div>
+</div>
+<br><br>

@@ -1,0 +1,24 @@
+<div id="pagination">
+  <span> Page : </span>
+  <span>
+    <select
+      [disabled]="totalPages.length === 0"
+      class="custom-select pointer"
+      (change)="changePage($event.target.value)"
+    >
+      <option
+        [selected]="currentPage === p"
+        *ngFor="let p of totalPages"
+        [value]="p"
+        >{{ p + 1 }}</option
+      >
+    </select>
+  </span>
+  <span> de {{ totalPages.length }} </span>
+  <span (click)="backward()">
+    <i class="fas fa-arrow-circle-left pointer"></i>
+  </span>
+  <span (click)="forward()">
+    <i class="fas fa-arrow-circle-right pointer"></i>
+  </span>
+</div>

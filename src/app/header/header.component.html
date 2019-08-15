@@ -1,0 +1,71 @@
+<!-- Barre de navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light border">
+  <div class="container collapse navbar-collapse" id="navbarNavDropdown">
+    <a (click)='scroll()' class="nav-link text-secondary" id="mapMarker">
+      <i class="fas fa-map-marker-alt"></i>
+      Aller à l'hôtel
+    </a>
+    <ul class="navbar-nav">
+      <li class="nav-item" id="tripAdvisor">
+        <a class="nav-link">
+          O Trip advisor
+        </a>
+      </li>
+
+      <li class="nav-item" id="connexion">
+        <a *ngIf='!user$; else displayUserInfo' class="nav-link" routerLink="/login">
+          Se connecter
+        </a>
+        <ng-template #displayUserInfo>
+          <a [popover]="userMenu" *ngIf='user$ | async as user' class="nav-link">
+            {{user.userName}}
+          </a>
+          <ng-template #userMenu>
+            <div (click)='logout()' class="dropdown-item">
+              Se déconnecter
+            </div>
+          </ng-template>
+        </ng-template>
+      </li>
+      <li class="nav-item" id="langues">
+        <a [popover]="popTemplate" class="nav-link"><i src="assets/blank.gif" class="flag flag-{{currentLanguage.flag}}"></i>
+          {{currentLanguage.label}}</a>
+        <ng-template #popTemplate>
+          <div *ngFor='let l of languageList'>
+            <div (click)='changeLanguage(l)' class="dropdown-item" href="#"><i src="assets/blank.gif" class="flag flag-{{l.flag}}"></i>
+              {{l.label}}</div>
+          </div>
+        </ng-template>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- Fin barre de navigation -->
+
+
+<!-- Menu principal -->
+<div class="text-center border">
+  <img width="120px" height="120px" src="assets/logo.png" alt="">
+  <br>
+  <ul class="list-inline text-center">
+    <li class="list-inline-item"><a routerLink="/">ACCEUIL</a></li>|
+    <li class="list-inline-item"><a routerLink="/chambresSuites">CHAMBRES ET SUITES</a></li>|
+    <li class="list-inline-item"><a routerLink="/restauration">RESTAURATION</a></li>|
+    <li class="list-inline-item"><a routerLink="/spaBienEtre">SPA & BIEN-ÊTRE</a></li>|
+    <li class="list-inline-item"><a routerLink="/contact">CONTACT</a></li>
+  </ul>
+</div>
+<!-- Fin menu principal -->
+
+
+<!-- Carousel -->
+<div *ngIf='showSlider | async' class="text-center">
+  <ngb-carousel *ngIf="images" [showNavigationIndicators]=false>
+    <ng-template ngbSlide *ngFor='let img of images'>
+      <img class="img-fluid" src={{img}} alt="Random first slide">
+      <div class="carousel-caption">
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>
+<!-- Fin Carousel -->

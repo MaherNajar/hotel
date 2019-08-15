@@ -1,0 +1,9 @@
+.badge-secondary {
+  margin-right: 4px;
+  background-color: #765205;
+}
+
+#itemsNumber a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

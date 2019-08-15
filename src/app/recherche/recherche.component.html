@@ -1,0 +1,15 @@
+<form class="form-inline">
+  <div class="form-group">
+    <div class="input-group mr-2">
+      <input (ngModelChange)='newRangeDate()' id="rechercheDateInput" readonly name="bsRangeValue" #drp="bsDaterangepicker"
+        bsDaterangepicker [(ngModel)]="bsRangeValue" class="form-control" placeholder="Vos dates" [bsConfig]='datePickerConfig'>
+      <div class="input-group-append">
+        <button (click)="drp.toggle()" [attr.aria-expanded]="drp.isOpen" class="btn btn-outline-secondary ml-2 mr-2"
+          type="button"><i class="far fa-calendar-alt"></i></button>
+      </div>
+    </div>
+    <div *ngIf='showActions' class="input-group">
+      <a id="rechercheBtn" type='button' routerLink='/chambresSuites' class="btn btn-warning my-2 btn-block">Rechercher</a>
+    </div>
+  </div>
+</form>

@@ -1,1 +1,88 @@
 /* You can add global styles to this file, and also import other style files */
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "ngx-bootstrap/datepicker/bs-datepicker.css";
+
+.nav-link {
+  cursor: pointer;
+}
+
+.btn,
+input {
+  border-radius: 0px;
+}
+
+.list-inline-item a {
+  color: #bf963e;
+  text-decoration: underline;
+  font-size: xx-large;
+}
+
+@media screen and (max-width: 302px) {
+  #langues {
+    margin-left: 30vw;
+  }
+
+  #mapMarker {
+    margin-left: 25vw;
+  }
+
+  #connexion {
+    margin-left: 30vw;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  #acceuil {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 575px) {
+  .recherche {
+    padding: 15px;
+    padding-left: 20px;
+    border: outset rgb(230, 230, 231);
+    background-color: #f8f9fa;
+    width: 420px;
+    max-width: 420px;
+    z-index: 2;
+    top: -60px;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  #tripAdvisor {
+    display: none;
+  }
+}
+
+.btn-warning,
+#rechercheBtn {
+  background-color: #bf963e;
+  border-color: #a07720;
+  color: white;
+}
+
+.btn-warning:hover,
+#rechercheBtn:hover {
+  background-color: #765205;
+  border-color: #765205;
+  color: white;
+}
+
+.btn-warning:disabled,
+#rechercheBtn:disabled {
+  background-color: #ffe1a1;
+  border-color: #ffe1a1;
+  color: grey;
+}
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.pointer {
+  cursor: pointer;
+}
