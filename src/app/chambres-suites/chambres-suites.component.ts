@@ -25,7 +25,7 @@ export class ChambresSuitesComponent {
 
   rooms: Room[];
 
-  form = {};
+  form: any = {};
 
   filteredRooms: Room[];
   sortCriteria: string;
