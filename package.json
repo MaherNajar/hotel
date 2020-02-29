@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy:gh": "ng build --prod --base-href=https://mahernajar.github.io/hotel/"
+    "deploy": "ng deploy --base-href=/hotel/ --repo=https://github.com/mahernajar/hotel.git"
   },
   "private": true,
   "dependencies": {
@@ -39,6 +39,7 @@
     "@types/jasminewd2": "~2.0.6",
     "@types/lodash": "^4.14.123",
     "@types/node": "^12.11.1",
+    "angular-cli-ghpages": "^0.6.2",
     "codelyzer": "^5.1.2",
     "jasmine-core": "~3.3.0",
     "jasmine-spec-reporter": "~4.2.1",

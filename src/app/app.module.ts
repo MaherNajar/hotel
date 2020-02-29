@@ -29,7 +29,7 @@ import { PaginationComponent } from "./common/paginator/pagination.component";
 
 const appRoutes: Routes = [
   { path: "", component: AcceuilComponent },
-  { path: "chambresSuites", component: ChambresSuitesComponent },
+  { path: "recherche", component: ChambresSuitesComponent },
   { path: "restauration", component: RestaurationComponent },
   { path: "spaBienEtre", component: SpaBienEtreComponent },
   { path: "contact", component: ContactComponent },
