@@ -57,7 +57,7 @@ defineLocale("fr", frLocale);
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     FormsModule,
-    NgbModule.forRoot(),
+    NgbModule,
     BsDatepickerModule.forRoot(),
     PopoverModule.forRoot()
   ],
