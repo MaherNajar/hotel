@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light border">
   <div class="container collapse navbar-collapse" id="navbarNavDropdown">
     <a (click)="scroll()" class="nav-link text-secondary" id="mapMarker">
-      <i class="fas fa-map-marker-alt"></i>
+      <span class="fas fa-map-marker-alt"></span>
       Aller à l'hôtel
     </a>
     <ul class="navbar-nav">
@@ -46,7 +46,10 @@
         <ng-template #popTemplate>
           <div *ngFor="let l of languageList">
             <div (click)="changeLanguage(l)" class="dropdown-item" href="#">
-              <i src="assets/blank.gif" class="flag flag-{{ l.flag }}"></i>
+              <span
+                src="assets/blank.gif"
+                class="flag flag-{{ l.flag }}"
+              ></span>
               {{ l.label }}
             </div>
           </div>

@@ -1,12 +1,10 @@
-import { of } from "rxjs";
-import { ROOMS } from "./rooms";
-import { Room } from "./room";
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { map } from "rxjs/operators";
+import { of } from 'rxjs';
+import { ROOMS } from './rooms';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root',
 })
 export class RoomService {
   constructor(private http: HttpClient) {}
