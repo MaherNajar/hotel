@@ -1,18 +1,17 @@
-import { AuthService } from "./../auth.service";
-import { NgForm } from "@angular/forms";
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { of } from "rxjs";
-import { Router } from "@angular/router";
+import { AuthService } from './../auth.service';
+import { NgForm } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { of } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: "app-login",
-  templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.css"]
+  selector: 'app-login',
+  templateUrl: './login.component.html',
 })
 export class LoginComponent implements OnInit {
   constructor(private auth: AuthService, private router: Router) {}
 
-  @ViewChild("f", { static: true })
+  @ViewChild('f', { static: true })
   form: NgForm;
 
   showSlider = of(false);
@@ -28,9 +27,11 @@ export class LoginComponent implements OnInit {
       let username = this.form.controls.email.value;
       let password = this.form.controls.password.value;
 
-      this.auth.login(username, password).subscribe(err => (this.error = err));
+      this.auth
+        .login(username, password)
+        .subscribe((err) => (this.error = err));
 
-      if (!this.error) this.router.navigate(["/"]);
+      if (!this.error) this.router.navigate(['/']);
     }
   }
 

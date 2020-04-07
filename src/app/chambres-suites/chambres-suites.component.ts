@@ -1,14 +1,14 @@
-import { RoomService } from "./room.service";
-import { Component } from "@angular/core";
-import { of } from "rxjs";
-import { Room } from "./room";
-import * as _ from "lodash";
-import paginate from "../../utils/pagination";
+import { RoomService } from './room.service';
+import { Component } from '@angular/core';
+import { of } from 'rxjs';
+import { Room } from './room';
+import * as _ from 'lodash';
+import paginate from '../../utils/paginate';
 
 @Component({
-  selector: "app-chambres-suites",
-  templateUrl: "./chambres-suites.component.html",
-  styleUrls: ["./chambres-suites.component.css"]
+  selector: 'app-chambres-suites',
+  templateUrl: './chambres-suites.component.html',
+  styleUrls: ['./chambres-suites.component.css'],
 })
 export class ChambresSuitesComponent {
   showSlider = of(false);
@@ -17,7 +17,7 @@ export class ChambresSuitesComponent {
   departure: Date;
 
   constructor(private roomService: RoomService) {
-    roomService.getAvailableRooms(new Date()).subscribe(rooms => {
+    roomService.getAvailableRooms(new Date()).subscribe((rooms) => {
       this.getRooms(rooms);
       this.changePage(0);
     });
@@ -57,18 +57,18 @@ export class ChambresSuitesComponent {
 
   // Page size font
   getFontWeight(value: HTMLElement) {
-    if (parseInt(value.innerHTML) === this.pageSize) return "bolder";
-    return "normal";
+    if (parseInt(value.innerHTML) === this.pageSize) return 'bolder';
+    return 'normal';
   }
 
   sortBy(sortCriteria: string) {
     this.sortCriteria = sortCriteria;
     switch (sortCriteria) {
-      case "moreExpensive":
+      case 'moreExpensive':
         this.filteredRooms.sort((a, b) => a.price - b.price);
         this.changePage(0);
         break;
-      case "lessExpensive":
+      case 'lessExpensive':
         this.filteredRooms.sort((a, b) => b.price - a.price);
         this.changePage(0);
         break;
@@ -85,7 +85,7 @@ export class ChambresSuitesComponent {
 
     this.roomService
       .getAvailableRooms(this.arrival)
-      .subscribe(availableRooms => {
+      .subscribe((availableRooms) => {
         this.getRooms(availableRooms);
         this.applyFilters();
       });
@@ -100,55 +100,55 @@ export class ChambresSuitesComponent {
 
     // Récupère du formulaire uniquement les champs qui sont cochés
     const filters = Object.keys(form)
-      .filter(key => form[key] === true)
+      .filter((key) => form[key] === true)
       .reduce((obj, key) => {
         obj[key] = form[key];
         return obj;
       }, {});
 
-    this.filteredRooms = this.rooms.slice().filter(room => {
+    this.filteredRooms = this.rooms.slice().filter((room) => {
       let meetsCapacity: boolean;
       let meetsType: boolean;
       let meetsBreakfast: boolean;
       let meetsDinner: boolean;
       let meetsTransportCard: boolean;
 
-      Object.keys(filters).forEach(key => {
+      Object.keys(filters).forEach((key) => {
         switch (key) {
-          case "oneCB":
+          case 'oneCB':
             meetsCapacity =
               room.capacity === 1 ? true : meetsCapacity ? true : false;
             break;
-          case "twoCB":
+          case 'twoCB':
             meetsCapacity =
               room.capacity === 2 ? true : meetsCapacity ? true : false;
             break;
-          case "threeCB":
+          case 'threeCB':
             meetsCapacity =
               room.capacity === 3 ? true : meetsCapacity ? true : false;
             break;
-          case "fourCB":
+          case 'fourCB':
             meetsCapacity =
               room.capacity === 4 ? true : meetsCapacity ? true : false;
             break;
-          case "moreCB":
+          case 'moreCB':
             meetsCapacity =
               room.capacity > 4 ? true : meetsCapacity ? true : false;
             break;
-          case "chambreCB":
+          case 'chambreCB':
             meetsType =
-              room.type === "Chambre" ? true : meetsType ? true : false;
+              room.type === 'Chambre' ? true : meetsType ? true : false;
             break;
-          case "suiteCB":
-            meetsType = room.type === "Suite" ? true : meetsType ? true : false;
+          case 'suiteCB':
+            meetsType = room.type === 'Suite' ? true : meetsType ? true : false;
             break;
-          case "petitDejeunerCB":
+          case 'petitDejeunerCB':
             meetsBreakfast = room.breakFast ? true : false;
             break;
-          case "dinerInclusCB":
+          case 'dinerInclusCB':
             meetsDinner = room.dinner ? true : false;
             break;
-          case "carteTransportCB":
+          case 'carteTransportCB':
             meetsTransportCard = room.transportCard ? true : false;
             break;
           default:

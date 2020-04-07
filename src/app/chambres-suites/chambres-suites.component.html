@@ -1,6 +1,6 @@
 <div class="container">
   <br />
-  <div class="row ">
+  <div class="row">
     <div class="col-4">
       <!-- Détails séjour -->
       <h3>Votre séjour</h3>
@@ -43,53 +43,116 @@
       <br />
       <div class="row border">
         <form #f="ngForm" class="ml-3" (change)="applyFilters()">
-          <div><i class="fas fa-caret-down"></i> Type de chambre</div>
+          <div><span class="fas fa-caret-down"></span> Type de chambre</div>
           <div class="custom-control custom-checkbox">
-            <input name="chambreCB" [(ngModel)]='form.chambreCB' type="checkbox" class="custom-control-input" id="chambreCB" />
+            <input
+              name="chambreCB"
+              [(ngModel)]="form.chambreCB"
+              type="checkbox"
+              class="custom-control-input"
+              id="chambreCB"
+            />
             <label for="chambreCB" class="custom-control-label">Chambre</label>
           </div>
           <div class="custom-control custom-checkbox">
-            <input name="suiteCB" [(ngModel)]='form.suiteCB' type="checkbox" class="custom-control-input" id="suiteCB" />
+            <input
+              name="suiteCB"
+              [(ngModel)]="form.suiteCB"
+              type="checkbox"
+              class="custom-control-input"
+              id="suiteCB"
+            />
             <label for="suiteCB" class="custom-control-label">Suite</label>
           </div>
           <br />
-          <div><i class="fas fa-caret-down"></i> Nombre de personnes</div>
+          <div><span class="fas fa-caret-down"></span> Nombre de personnes</div>
           <div class="custom-control custom-checkbox">
-            <input name="oneCB" [(ngModel)]='form.oneCB' type="checkbox" class="custom-control-input" id="oneCB" />
+            <input
+              name="oneCB"
+              [(ngModel)]="form.oneCB"
+              type="checkbox"
+              class="custom-control-input"
+              id="oneCB"
+            />
             <label for="oneCB" class="custom-control-label">1</label>
           </div>
           <div class="custom-control custom-checkbox">
-            <input name="twoCB" [(ngModel)]='form.twoCB' type="checkbox" class="custom-control-input" id="twoCB" />
+            <input
+              name="twoCB"
+              [(ngModel)]="form.twoCB"
+              type="checkbox"
+              class="custom-control-input"
+              id="twoCB"
+            />
             <label for="twoCB" class="custom-control-label">2</label>
           </div>
           <div class="custom-control custom-checkbox">
-            <input name="threeCB" [(ngModel)]='form.threeCB' type="checkbox" class="custom-control-input" id="threeCB" />
+            <input
+              name="threeCB"
+              [(ngModel)]="form.threeCB"
+              type="checkbox"
+              class="custom-control-input"
+              id="threeCB"
+            />
             <label for="threeCB" class="custom-control-label">3</label>
           </div>
           <div class="custom-control custom-checkbox">
-            <input name="fourCB" [(ngModel)]='form.fourCB' type="checkbox" class="custom-control-input" id="fourCB" />
+            <input
+              name="fourCB"
+              [(ngModel)]="form.fourCB"
+              type="checkbox"
+              class="custom-control-input"
+              id="fourCB"
+            />
             <label for="fourCB" class="custom-control-label">4</label>
           </div>
           <div class="custom-control custom-checkbox">
-            <input name="moreCB" [(ngModel)]='form.moreCB' type="checkbox" class="custom-control-input" id="moreCB" />
+            <input
+              name="moreCB"
+              [(ngModel)]="form.moreCB"
+              type="checkbox"
+              class="custom-control-input"
+              id="moreCB"
+            />
             <label for="moreCB" class="custom-control-label">Plus</label>
           </div>
           <br />
-          <div><i class="fas fa-caret-down"></i> Services</div>
+          <div><span class="fas fa-caret-down"></span> Services</div>
           <div class="custom-control custom-checkbox">
-            <input name="petitDejeunerCB" [(ngModel)]='form.petitDejeunerCB' type="checkbox" class="custom-control-input"
-              id="petitDejeunerCB" />
-            <label for="petitDejeunerCB" class="custom-control-label">Petit déjeuner inclus</label>
+            <input
+              name="petitDejeunerCB"
+              [(ngModel)]="form.petitDejeunerCB"
+              type="checkbox"
+              class="custom-control-input"
+              id="petitDejeunerCB"
+            />
+            <label for="petitDejeunerCB" class="custom-control-label"
+              >Petit déjeuner inclus</label
+            >
           </div>
           <div class="custom-control custom-checkbox">
-            <input name="dinerInclusCB" [(ngModel)]='form.dinerInclusCB' type="checkbox" class="custom-control-input"
-              id="dinerInclusCB" />
-            <label for="dinerInclusCB" class="custom-control-label">Diner inclus</label>
+            <input
+              name="dinerInclusCB"
+              [(ngModel)]="form.dinerInclusCB"
+              type="checkbox"
+              class="custom-control-input"
+              id="dinerInclusCB"
+            />
+            <label for="dinerInclusCB" class="custom-control-label"
+              >Diner inclus</label
+            >
           </div>
           <div class="custom-control custom-checkbox">
-            <input name="carteTransportCB" [(ngModel)]='form.carteTransportCB' type="checkbox" class="custom-control-input"
-              id="carteTransportCB" />
-            <label for="carteTransportCB" class="custom-control-label">Carte de transport</label>
+            <input
+              name="carteTransportCB"
+              [(ngModel)]="form.carteTransportCB"
+              type="checkbox"
+              class="custom-control-input"
+              id="carteTransportCB"
+            />
+            <label for="carteTransportCB" class="custom-control-label"
+              >Carte de transport</label
+            >
           </div>
         </form>
       </div>
@@ -97,12 +160,18 @@
     </div>
     <div class="col">
       <h1>Chambres disponibles</h1>
-      <recherche [showActions]="false" (rangeDateValue)="newDateRangeEmited($event)"></recherche>
+      <recherche
+        [showActions]="false"
+        (rangeDateValue)="newDateRangeEmited($event)"
+      ></recherche>
 
       <!-- Tris et Pagination -->
       <div class="row mt-3">
         <div class="form-group">
-          <select (change)="sortBy($event.target.value)" class="custom-select pointer">
+          <select
+            (change)="sortBy($event.target.value)"
+            class="custom-select pointer"
+          >
             <option value="">Trier par</option>
             <option value="moreExpensive">Les moins chers</option>
             <option value="lessExpensive">Les plus chers</option>
@@ -110,11 +179,25 @@
         </div>
         <div id="itemsNumber" class="offset-2 col">
           Voir :
-          <a #five [style.font-weight]="getFontWeight(five)" (click)="changePageSize(5)">5</a>
+          <a
+            #five
+            [style.font-weight]="getFontWeight(five)"
+            (click)="changePageSize(5)"
+            >5</a
+          >
           |
-          <a #ten [style.font-weight]="getFontWeight(ten)" (click)="changePageSize(10)">10</a>
+          <a
+            #ten
+            [style.font-weight]="getFontWeight(ten)"
+            (click)="changePageSize(10)"
+            >10</a
+          >
         </div>
-        <pagination [currentPage]="currentPage" [totalPages]="totalPages" (onChange)="changePage($event)"></pagination>
+        <pagination
+          [currentPage]="currentPage"
+          [totalPages]="totalPages"
+          (onChange)="changePage($event)"
+        ></pagination>
       </div>
       <!-- Fin Tris et Pagination -->
 
@@ -122,18 +205,25 @@
       Total disponibles : {{ filteredRooms.length }}
       <div class="row border mb-3" *ngFor="let r of pageItems; let i = index">
         <div class="col-2 px-0 col-xs-12">
-          <img src="https://picsum.photos/144/144/?random{{i}}" />
+          <img
+            alt="image{{ i }}"
+            src="https://picsum.photos/144/144/?random{{ i }}"
+          />
         </div>
         <div class="col-8 ml-4 mt-1">
           <h6>
             {{ r.type }}
-            <strong style="color:#a07720">{{ r.capacity }}</strong>
+            <strong style="color: #a07720;">{{ r.capacity }}</strong>
             {{ r.capacity === 1 ? "personne" : "personnes" }}
           </h6>
 
-          <span *ngIf="r.breakFast" class="badge badge-secondary">Petit déjeuner</span>
+          <span *ngIf="r.breakFast" class="badge badge-secondary"
+            >Petit déjeuner</span
+          >
           <span *ngIf="r.dinner" class="badge badge-secondary">Dinner</span>
-          <span *ngIf="r.transportCard" class="badge badge-secondary">Carte de transport</span>
+          <span *ngIf="r.transportCard" class="badge badge-secondary"
+            >Carte de transport</span
+          >
           <p>
             Nam ac pellentesque nulla. Sed eget odio tempus, faucibus magna eu,
             condimentum felis. Duis vitae fermentum felis, et pulvinar nunc.
@@ -142,13 +232,13 @@
         <div class="col px-0 mt-3">
           <div class="row">
             A partir de
-            <strong style="color:#a07720">
+            <strong style="color: #a07720;">
               {{ r.price | number: "1.0-0" }} €
             </strong>
           </div>
           <div class="row">la nuit</div>
           <div class="row mt-2">
-            <button class=" btn btn-warning btn-sm">Reserver</button>
+            <button class="btn btn-warning btn-sm">Reserver</button>
           </div>
         </div>
       </div>
