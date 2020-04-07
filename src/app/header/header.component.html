@@ -22,7 +22,7 @@
         </a>
         <ng-template #displayUserInfo>
           <a
-            [popover]="userMenu"
+            [ngbPopover]="userMenu"
             *ngIf="user$ | async as user"
             class="nav-link"
           >
@@ -36,7 +36,7 @@
         </ng-template>
       </li>
       <li class="nav-item" id="langues">
-        <a [popover]="popTemplate" class="nav-link"
+        <a [ngbPopover]="popTemplate" class="nav-link"
           ><i
             src="assets/blank.gif"
             class="flag flag-{{ currentLanguage.flag }}"

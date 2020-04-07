@@ -1,28 +1,19 @@
-import { AuthService } from "./../auth.service";
-import { Observable } from "rxjs";
-import { Component, Input } from "@angular/core";
-import { PopoverConfig } from "ngx-bootstrap/popover";
+import { AuthService } from './../auth.service';
+import { Observable } from 'rxjs';
+import { Component, Input } from '@angular/core';
 
 const languages = [
-  { flag: "fr", label: "Français" },
-  { flag: "gb", label: "Anglais" },
-  { flag: "es", label: "Espagnol" },
-  { flag: "it", label: "Italien" },
-  { flag: "de", label: "Allemand" }
+  { flag: 'fr', label: 'Français' },
+  { flag: 'gb', label: 'Anglais' },
+  { flag: 'es', label: 'Espagnol' },
+  { flag: 'it', label: 'Italien' },
+  { flag: 'de', label: 'Allemand' },
 ];
 
-export function getPopoverConfig(): PopoverConfig {
-  return Object.assign(new PopoverConfig(), {
-    placement: "bottom",
-    outsideClick: true
-  });
-}
-
 @Component({
-  selector: "header",
-  templateUrl: "./header.component.html",
-  styleUrls: ["./header.component.css"],
-  providers: [{ provide: PopoverConfig, useFactory: getPopoverConfig }]
+  selector: 'header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
   constructor(private auth: AuthService) {
@@ -39,7 +30,7 @@ export class HeaderComponent {
   }
 
   scroll() {
-    window.scrollTo({ top: document.body.offsetHeight, behavior: "smooth" });
+    window.scrollTo({ top: document.body.offsetHeight, behavior: 'smooth' });
   }
   @Input()
   showSlider: Observable<boolean>;
