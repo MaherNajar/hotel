@@ -29,8 +29,11 @@ jobs:
           
       - name: Publish the Docker image to Google Container Registry
         run: |
-          docker push gcr.io/hotelparadis/hotel
-      
+          docker push gcr.io/hotelparadis/hotel 
+          
+      - name: Install beta component
+          gcloud components install beta
+          
       - name: Deploy to Cloud Run
         run: |
-          gcloud beta run deploy hotel-service --image gcr.io/hotelparadis/hotel --quiet
+          gcloud beta run deploy hotel-service --image gcr.io/hotelparadis/hotel
