@@ -6,24 +6,24 @@ on:
 
 jobs:
 
-  build:
+  Cloud-Run-Deploy:
 
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag hotelparadis:$(date +%s)
-    - name: Cloud Run
-    - uses: stefda/action-cloud-run@v1.0
-      with:
-        # Name of the docker image
-        image: gcr.io/hotelparadis/hotel
-        # Name of the service in Cloud Run
-        service: hotel-service
-        # GCP project
-        project: hotelparadis
-        # GCP region
-        region: europe-west1
-        # GCP service key with storage and run permissions
-        service key: ${{secrets.GCLOUD_AUTH}}
+      - uses: actions/checkout@v2
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag hotelparadis:$(date +%s)
+      - name: Deploy service to Cloud Run
+        uses: stefda/action-cloud-run@1.0.0
+        with:
+          # Name of the docker image
+          image: gcr.io/hotelparadis/hotel
+          # Name of the service in Cloud Run
+          service: hotel-service
+          # GCP project
+          project: hotelparadis
+          # GCP region
+          region: europe-west1
+          # GCP service key with storage and run permissions
+          service key: ${{secrets.GCLOUD_AUTH}}
