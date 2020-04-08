@@ -8,9 +8,9 @@ ENV HOST 0.0.0.0
 
 COPY package*.json ./
 
-RUN npm install --only=production
-
 RUN npm install -g @angular/cli
+
+RUN npm install
 
 # Copy local app code to the container
 COPY . .
