@@ -22,10 +22,6 @@ jobs:
       - name: Configure Docker authentication to GCloud
         run: |
           gcloud auth configure-docker
-          
-      - name: Go back
-        run: |
-          cd ..
            
       - name: Build the Docker image
         run: |        
