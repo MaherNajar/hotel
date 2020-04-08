@@ -32,6 +32,7 @@ jobs:
           docker push gcr.io/hotelparadis/hotel 
           
       - name: Install beta component
+        run: | 
           gcloud components install beta
           
       - name: Deploy to Cloud Run
