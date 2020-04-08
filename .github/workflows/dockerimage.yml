@@ -25,11 +25,11 @@ jobs:
           
       - name: Build the Docker image
         run: |        
-          docker build . --tag eu.gcr.io/hotelparadis/hotel
+          docker build . --tag gcr.io/hotelparadis/hotel
           
       - name: Publish the Docker image to Google Container Registry
         run: |
-          docker push eu.gcr.io/hotelparadis/hotel
+          docker push gcr.io/hotelparadis/hotel
       
       - name: Deploy to Cloud Run
         run: |
