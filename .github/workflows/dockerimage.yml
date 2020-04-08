@@ -37,4 +37,4 @@ jobs:
           
       - name: Deploy to Cloud Run
         run: |
-          gcloud beta run deploy hotel-service --image=gcr.io/hotelparadis/hotel --platform=managed --region=europe-west1
+          gcloud beta run deploy hotel-service --image=gcr.io/hotelparadis/hotel --platform=managed --region=europe-west1 --project=hotelparadis
