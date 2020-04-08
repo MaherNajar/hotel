@@ -12,8 +12,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@master
-      - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag hotelparadis:$(date +%s)
+      - name: Docker Buildx
+        uses: crazy-max/ghaction-docker-buildx@v1.2.1
       - name: Deploy service to Cloud Run
         uses: schliflo/action-cloud-run@1.0.0
         with:
