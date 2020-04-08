@@ -43,8 +43,10 @@ const appRoutes: Routes = [
     PaginationComponent,
   ],
   imports: [
-    BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    RouterModule.forRoot(appRoutes, {
+    initialNavigation: 'enabled'
+}),
     HttpClientModule,
     FormsModule,
     NgbModule,
