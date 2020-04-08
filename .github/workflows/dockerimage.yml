@@ -11,32 +11,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2.1.0
       - name: Docker Buildx
         uses: crazy-max/ghaction-docker-buildx@v1.2.1
       - name: Deploy service to Cloud Run
-        uses: schliflo/action-cloud-run@1.0.0
-        with:
-          # Directory where the Dockerfile is to be found
-          working_directory: .
-          # Cloud run service name
-          service_name: hotel-service 
-          # GCP service key with storage and run permissions
-          key: ${{secrets.GCLOUD_AUTH}}
+        uses: stefda/action-cloud-run@v1.0
+        with:    
+          # Name of the docker image
+          image: gcr.io/hotelparadis/hotel
+          # Name of the service in Cloud Run
+          service: hotel-service
           # GCP project
           project: hotelparadis
-          # GCP Registry (e.g. 'eu.gcr.io')
-          registry: gcr.io
           # GCP region
           region: europe-west1
-          
-          # Name of the docker image
-          #image: gcr.io/hotelparadis/hotel
-          # Name of the service in Cloud Run
-          #service: hotel-service
-          # GCP project
-          #project: hotelparadis
-          # GCP region
-          #region: europe-west1
           # GCP service key with storage and run permissions
-          #key: ${{secrets.GCLOUD_AUTH}}
+          service key: ${{secrets.GCLOUD_AUTH}}
