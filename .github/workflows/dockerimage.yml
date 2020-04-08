@@ -10,7 +10,7 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    steps:
+    steps:    
       - name: Checkout
         uses: actions/checkout@v2.1.0
         
@@ -37,4 +37,4 @@ jobs:
           
       - name: Deploy to Cloud Run
         run: |
-          gcloud beta run deploy hotel-service --image gcr.io/hotelparadis/hotel
+          gcloud beta run deploy hotel-service --image=gcr.io/hotelparadis/hotel
