@@ -23,6 +23,10 @@ jobs:
         run: |
           gcloud auth configure-docker
           
+      - name: Go back
+        run: |
+          cd ..
+           
       - name: Build the Docker image
         run: |        
           docker build . --tag gcr.io/hotelparadis/hotel
