@@ -11,19 +11,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout
       - uses: actions/checkout@v2.1.0
-      - name: Docker Buildx
-        uses: crazy-max/ghaction-docker-buildx@v1.2.1
-      - name: Deploy service to Cloud Run
-        uses: stefda/action-cloud-run@v1.0
-        with:    
-          # Name of the docker image
-          image: gcr.io/hotelparadis/hotel
-          # Name of the service in Cloud Run
-          service: hotel-service
-          # GCP project
-          project: hotelparadis
-          # GCP region
-          region: europe-west1
-          # GCP service key with storage and run permissions
-          service key: ${{secrets.GCLOUD_AUTH}}
+        
+      # GCloud CLI Setup
+      - name: Setup gcloud environment
+        uses: GoogleCloudPlatform/github-actions@0.1.2
+        with:
+          # The service account key which will be used for authentication.
+          service_account_key: ${{ secrets.GCLOUD_AUTH }}
+       
+       # Configure docker to use the gcloud command-line tool as a credential helper
+      - run: |
+          gcloud auth configure-docker
+          
+      # Build the Docker image
+      - name: Build
+        run: |        
+          docker build . --tag eu.gcr.io/hotelparadis/hotel
+          
+      # Push the Docker image to Google Container Registry
+      - name: Publish
+        run: |
+          docker push eu.gcr.io/hotelparadis/hotel
+      
+      # Deploy to Cloud Run
+      - name: Deploy
+        run: |
+          gcloud beta run deploy hotel-service --image gcr.io/hotelparadis/hotel
