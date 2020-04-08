@@ -11,31 +11,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout
-      - uses: actions/checkout@v2.1.0
+      - name: Checkout
+        uses: actions/checkout@v2.1.0
         
-      # GCloud CLI Setup
       - name: Setup gcloud environment
         uses: GoogleCloudPlatform/github-actions@0.1.2
         with:
-          # The service account key which will be used for authentication.
           service_account_key: ${{ secrets.GCLOUD_AUTH }}
        
-       # Configure docker to use the gcloud command-line tool as a credential helper
-      - run: |
+      - name: Configure docker authentication to GCloud
+        run: |
           gcloud auth configure-docker
           
-      # Build the Docker image
-      - name: Build
+      - name: Build the Docker image
         run: |        
           docker build . --tag eu.gcr.io/hotelparadis/hotel
           
-      # Push the Docker image to Google Container Registry
-      - name: Publish
+      - name: Publish the Docker image to Google Container Registry
         run: |
           docker push eu.gcr.io/hotelparadis/hotel
       
-      # Deploy to Cloud Run
-      - name: Deploy
+      - name: Deploy to Cloud Run
         run: |
           gcloud beta run deploy hotel-service --image gcr.io/hotelparadis/hotel
