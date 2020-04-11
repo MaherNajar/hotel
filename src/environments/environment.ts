@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  embedMapApi: 'AIzaSyCrUdNlIISKGTiRMHXGETYxrgavZmGRu4A',
+  embedMapApi: 'blablabla',
 };
 
 /*
