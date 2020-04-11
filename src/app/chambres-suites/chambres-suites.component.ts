@@ -1,9 +1,8 @@
-import { RoomService } from './room.service';
+import { RoomService, Room } from './room.service';
 import { Component } from '@angular/core';
 import { of } from 'rxjs';
-import { Room } from './room';
 import * as _ from 'lodash';
-import paginate from '../../utils/paginate';
+import paginate from '../shared/paginator/paginate';
 
 @Component({
   selector: 'app-chambres-suites',

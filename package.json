@@ -11,7 +11,8 @@
     "dev:ssr": "ng run hotelparadis:serve-ssr",
     "serve:ssr": "node dist/hotelparadis/server/main.js",
     "build:ssr": "ng build --prod && ng run hotelparadis:server:production",
-    "prerender": "ng run hotelparadis:prerender"
+    "prerender": "ng run hotelparadis:prerender",
+    "deploy": "npm run build:ssr && npm run serve:ssr"
   },
   "private": true,
   "dependencies": {

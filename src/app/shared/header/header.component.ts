@@ -1,4 +1,3 @@
-import { AuthService } from './../auth.service';
 import { Observable } from 'rxjs';
 import { Component, Input } from '@angular/core';
 
@@ -16,17 +15,9 @@ const languages = [
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  constructor(private auth: AuthService) {
+  constructor() {
     this.languageList = languages.slice(1);
     this.currentLanguage = languages[0];
-  }
-
-  get user$() {
-    return this.auth.userInfo;
-  }
-
-  logout() {
-    this.auth.logout();
   }
 
   scroll() {
@@ -35,6 +26,7 @@ export class HeaderComponent {
   @Input()
   showSlider: Observable<boolean>;
 
+  user$;
   currentLanguage;
   languageList;
 
