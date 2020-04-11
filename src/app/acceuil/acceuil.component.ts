@@ -6,16 +6,7 @@ import { of } from 'rxjs';
   templateUrl: './acceuil.component.html',
 })
 export class AcceuilComponent implements OnInit {
-  smallScreen: boolean;
   showSlider = of(true);
-
-  @HostListener('window:resize', ['$event'])
-  onresize(event) {
-    this.smallScreen = event.target.innerWidth < 576 ? true : false;
-  }
-  constructor() {
-    this.smallScreen = window.innerWidth < 576 ? true : false;
-  }
 
   images = [1, 2, 3].map(
     () => `https://picsum.photos/2000/400?random&t=${Math.random()}`

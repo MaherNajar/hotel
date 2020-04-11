@@ -15,10 +15,7 @@ export class LoginComponent implements OnInit {
   error;
   showSlider = of(false);
 
-  onSubmit() {
-    if (this.form.valid) {
-    }
-  }
+  onSubmit() {}
 
   ngOnInit() {}
 }

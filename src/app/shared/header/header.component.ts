@@ -28,11 +28,11 @@ export class HeaderComponent {
 
   user$;
   currentLanguage;
-  languageList;
+  languageList: any[];
 
   changeLanguage(selectedLanguage) {
     let index = languages.indexOf(selectedLanguage);
-    this.languageList = languages.slice();
+    this.languageList = [...languages];
     this.languageList.splice(index, 1);
     this.currentLanguage = selectedLanguage;
   }

@@ -1,9 +1,9 @@
 {
   "name": "hotelparadis",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "npm run serve:ssr",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -11,8 +11,7 @@
     "dev:ssr": "ng run hotelparadis:serve-ssr",
     "serve:ssr": "node dist/hotelparadis/server/main.js",
     "build:ssr": "ng build --prod && ng run hotelparadis:server:production",
-    "prerender": "ng run hotelparadis:prerender",
-    "deploy": "npm run build:ssr && npm run serve:ssr"
+    "prerender": "ng run hotelparadis:prerender"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +25,7 @@
     "@angular/platform-browser-dynamic": "~9.1.0",
     "@angular/platform-server": "~9.1.0",
     "@angular/router": "~9.1.0",
+    "@angular/service-worker": "~9.1.0",
     "@ng-bootstrap/ng-bootstrap": "^6.0.2",
     "@nguniversal/express-engine": "^9.1.0",
     "bootstrap": "^4.4.1",

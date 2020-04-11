@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InternationalizationModule } from './internationalization/internationalization.module';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import {
   NgbCarouselModule,
@@ -27,6 +28,7 @@ const modules = [
   InternationalizationModule,
   FormsModule,
   HttpClientModule,
+  RouterModule,
   NgbCarouselModule,
   NgbPopoverModule,
   NgbDatepickerModule,
