@@ -4,14 +4,15 @@
   "scripts": {
     "ng": "ng",
     "start": "npm run serve:ssr",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "dev:ssr": "ng run hotelparadis:serve-ssr",
     "serve:ssr": "node dist/hotelparadis/server/main.js",
     "build:ssr": "ng build --prod && ng run hotelparadis:server:production",
-    "prerender": "ng run hotelparadis:prerender"
+    "prerender": "ng run hotelparadis:prerender",
+    "deploy": "firebase deploy --debug --token \"$FIREBASE_TOKEN\" --only hosting --project hotelparadis"
   },
   "private": true,
   "dependencies": {
