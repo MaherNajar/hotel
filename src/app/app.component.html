@@ -1,9 +1,9 @@
-<header [showSlider]='showSlider'></header>
+<header [showSlider]="showSlider"></header>
 
-<div class="container-fluid">
-    <router-outlet (activate)='onActivate($event)'></router-outlet>
+<div>
+  <router-outlet (activate)="onActivate($event)"></router-outlet>
 </div>
 
-<hr>
+<hr />
 
 <footer id="footer"></footer>

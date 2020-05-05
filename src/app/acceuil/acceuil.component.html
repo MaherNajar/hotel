@@ -1,11 +1,7 @@
 <!-- Recherche -->
-<div *ngIf='!smallScreen; else b' class="col-3 container recherche">
+<div class="col-3 container recherche">
   <recherche></recherche>
 </div>
-<ng-template #b>
-  <br>
-  <recherche></recherche>
-</ng-template>
 <!-- Fin recherche -->
 
 <!-- Page d'acceuil -->
@@ -19,49 +15,60 @@
     <div class="col-1"></div>
     <div class="col">
       <h3>Argument marketing</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at diam lectus. Sed iaculis porta felis ut
-        accumsan. Cras rhoncus turpis id nulla placerat, euismod sollicitudin arcu varius. Nulla rutrum sollicitudin
-        massa, id bibendum augue sodales non. Pellentesque interdum maximus tortor, non efficitur est tristique et.
-        Phasellus sit amet quam imperdiet, viverra nunc tristique, blandit ipsum. Pellentesque luctus lacus in blandit
-        dignissim. Donec tempus leo mi, ac facilisis eros lobortis nec. Nunc ultrices dignissim libero, sit amet
-        placerat leo vulputate vel.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at
+        diam lectus. Sed iaculis porta felis ut accumsan. Cras rhoncus turpis id
+        nulla placerat, euismod sollicitudin arcu varius. Nulla rutrum
+        sollicitudin massa, id bibendum augue sodales non. Pellentesque interdum
+        maximus tortor, non efficitur est tristique et. Phasellus sit amet quam
+        imperdiet, viverra nunc tristique, blandit ipsum. Pellentesque luctus
+        lacus in blandit dignissim. Donec tempus leo mi, ac facilisis eros
+        lobortis nec. Nunc ultrices dignissim libero, sit amet placerat leo
+        vulputate vel.
+      </p>
     </div>
   </div>
   <!-- Fin Slogan -->
-  <br>
+  <br />
   <!-- Carousel -->
   <div class="row">
-
     <ngb-carousel *ngIf="images">
-      <ng-template ngbSlide *ngFor='let img of images'>
-        <img class="img-fluid" src={{img}} alt="Random first slide">
-        <div class="carousel-caption">
-        </div>
+      <ng-template ngbSlide *ngFor="let img of images">
+        <img class="img-fluid" src="{{ img }}" alt="Random first slide" />
+        <div class="carousel-caption"></div>
       </ng-template>
     </ngb-carousel>
-
   </div>
   <!-- Fin Carousel -->
-  <br><br>
+  <br /><br />
   <!-- Text marketing -->
   <div class="row">
-    Text marketing : Vestibulum commodo consectetur augue, nec dictum magna sodales eget. Quisque eu elit sit amet enim
-    ullamcorper elementum hendrerit ac ante. Vivamus purus magna, ornare vitae pharetra ac, fringilla at risus. Aenean
-    varius quis lectus ac ornare. Aenean et nisi suscipit, laoreet ex vel, auctor dui. Donec et ante vel urna congue
-    placerat in consequat diam. Fusce suscipit tristique nulla, ultricies interdum quam porttitor eget.
+    Text marketing : Vestibulum commodo consectetur augue, nec dictum magna
+    sodales eget. Quisque eu elit sit amet enim ullamcorper elementum hendrerit
+    ac ante. Vivamus purus magna, ornare vitae pharetra ac, fringilla at risus.
+    Aenean varius quis lectus ac ornare. Aenean et nisi suscipit, laoreet ex
+    vel, auctor dui. Donec et ante vel urna congue placerat in consequat diam.
+    Fusce suscipit tristique nulla, ultricies interdum quam porttitor eget.
   </div>
   <!-- Fin text marketing -->
-  <br>
-  <br>
+  <br />
+  <br />
   <!-- Chambres et suites -->
-  <div class="row ">
-    <div *ngFor='let i of items'>
+  <div class="row">
+    <div *ngFor="let i of items">
       <div class="col-3 mb-4">
-        <div class="card" style="width: 21em">
-          <img class="card-img-top" src="https://picsum.photos/300/150/?{{i}}" alt="Card image cap">
+        <div class="card" style="width: 21em;">
+          <img
+            class="card-img-top"
+            src="https://picsum.photos/300/150/?{{ i }}"
+            alt="Card image cap"
+          />
           <div class="card-body">
             <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">A partir de <strong style="color: #bf963e">{{i}} €</strong> la nuit</p>
+            <p class="card-text">
+              A partir de <strong style="color: #bf963e;">{{ i }} €</strong> la
+              nuit
+            </p>
             <a href="#" class="btn btn-warning float-right">Reserver</a>
           </div>
         </div>
@@ -69,8 +76,8 @@
     </div>
   </div>
   <!-- Fin chambres et suites -->
-  <br>
-  <br>
+  <br />
+  <br />
 
   <!-- Carré information -->
   <div class="row">
@@ -79,28 +86,28 @@
         <div class="card-body">
           <h5 class="card-title">Restaurant</h5>
           <p class="card-text">
-            Nulla velit orci, condimentum non sagittis vel, dignissim id est. Vivamus vel eros id lectus accumsan
-            lobortis
-            in quis eros. Maecenas fermentum lacus vel tincidunt malesuada.
+            Nulla velit orci, condimentum non sagittis vel, dignissim id est.
+            Vivamus vel eros id lectus accumsan lobortis in quis eros. Maecenas
+            fermentum lacus vel tincidunt malesuada.
           </p>
           <p class="card-text"><a href="">En savoir plus</a></p>
         </div>
       </div>
       <div class="card">
-        <img src="https://picsum.photos/300/300/?1" alt="">
+        <img src="https://picsum.photos/300/300/?1" alt="" />
       </div>
       <div class="w-100"></div>
       <div class="card">
-        <img src="https://picsum.photos/300/300/?2" alt="">
+        <img src="https://picsum.photos/300/300/?2" alt="" />
       </div>
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title"> Spa & Bien-être</h5>
+          <h5 class="card-title">Spa & Bien-être</h5>
           <p class="card-text">
-            Praesent blandit, nibh sit amet luctus aliquam, nisl lacus ornare augue, vitae elementum urna magna eu
-            lorem. Vivamus tincidunt orci quis hendrerit egestas. Nullam non ultrices nulla. Pellentesque sed
-            ultrices
-            justo.
+            Praesent blandit, nibh sit amet luctus aliquam, nisl lacus ornare
+            augue, vitae elementum urna magna eu lorem. Vivamus tincidunt orci
+            quis hendrerit egestas. Nullam non ultrices nulla. Pellentesque sed
+            ultrices justo.
           </p>
           <p class="card-text"><a href="">En savoir plus</a></p>
         </div>
@@ -108,5 +115,6 @@
     </div>
   </div>
   <!-- Fin carré information -->
-  <br><br>
+  <br /><br />
   <!-- Fin page d'acceuil -->
+</div>

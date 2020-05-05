@@ -5,6 +5,7 @@
 ### Angular ###
 ## Angular ##
 # compiled output
+Dockerfile
 public/
 dist/
 tmp/

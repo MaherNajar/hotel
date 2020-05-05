@@ -1,14 +1,11 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "dist/hotelparadis/browser",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
         "source": "**",
-        "run": {
-          "serviceId": "hotel-service",
-          "region": "europe-west1"
-        }
+        "destination": "/index.html"
       }
     ]
   }
